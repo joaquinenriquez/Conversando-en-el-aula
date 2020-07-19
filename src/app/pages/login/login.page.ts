@@ -13,8 +13,8 @@ import { FirebaseErrors } from 'src/app/model/enums/firebase-errors.enum';
 })
 export class LoginPage implements OnInit {
 
-  email: string;
-  password: string;
+  email: string = 'asd123@gmail.com';
+  password: string = '1234678';
 
   constructor(private authService: AuthService, 
               private router: Router,
@@ -27,15 +27,21 @@ export class LoginPage implements OnInit {
     this.authService.onLogin(this.email, this.password).then(auth => {
       this.router.navigateByUrl('/home');
     }).catch(error => {
+      console.log(error);
       switch (error.code) {
         
         case FirebaseErrors.user_not_found:
           this.dialogService.showMessage('Error', 'El usuario no existe, intente de nuevo por favor', 'error');
-        break;
+          break;
 
         case FirebaseErrors.wrong_password:
-          alert('La contraseña es incorrecta');
+          this.dialogService.showMessage('Error', 'La contraseña es incorrecta', 'error');
           break;
+
+        case FirebaseErrors.operation_not_allowed:
+          this.dialogService.showMessage('Error', 'El método de auntenticación que esta utilizando se encuentra deshabilitado', 'error');
+          break;
+        
       }
     });
   }

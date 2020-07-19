@@ -74,6 +74,22 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+    --ion-color-chatrooma: #69bb7b;
+    --ion-color-chatrooma-rgb: 105,187,123;
+    --ion-color-chatrooma-contrast: #000000;
+    --ion-color-chatrooma-contrast-rgb: 0,0,0;
+    --ion-color-chatrooma-shade: #5ca56c;
+    --ion-color-chatrooma-tint: #78c288;
+
+    --ion-color-chatroomb: #edae49;
+    --ion-color-chatroomb-rgb: 237,174,73;
+    --ion-color-chatroomb-contrast: #000000;
+    --ion-color-chatroomb-contrast-rgb: 0,0,0;
+    --ion-color-chatroomb-shade: #d19940;
+    --ion-color-chatroomb-tint: #efb65b;
+
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -225,4 +241,9 @@
 
     --ion-tab-bar-background: #1f1f1f;
   }
+
+
+
+
+
 }

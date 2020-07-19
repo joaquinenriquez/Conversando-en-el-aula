@@ -7,12 +7,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-
+ 
   constructor(private db: AngularFirestore) { }
 
   getAll(collectionName: string): Observable<DocumentChangeAction<any>[]> {
     return this.db.collection(collectionName).snapshotChanges();
   }
+
 
   update(collectionName: string, documentId: string, object: any) {
     return this.db.collection(collectionName).doc(documentId).update(object);
@@ -39,6 +40,15 @@ export class DataService {
   {
     return this.db.collection(collectionName).doc(documentId).set(newObject);
   }
+
+  getAll2(collectionName: string): Observable<any[]> {
+    return this.db.collection(collectionName).valueChanges();
+  }
+
+  getOne2(collectionName: string, documentId: string): Observable<any> {
+    return this.db.collection(collectionName).doc(documentId).valueChanges();
+  }
+
 
 
 }

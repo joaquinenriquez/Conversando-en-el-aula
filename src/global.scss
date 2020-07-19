@@ -24,3 +24,24 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+
+.ion-color-chatrooma {
+    --ion-color-base: var(--ion-color-chatrooma);
+    --ion-color-base-rgb: var(--ion-color-chatrooma-rgb);
+    --ion-color-contrast: var(--ion-color-chatrooma-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-chatrooma-contrast-rgb);
+    --ion-color-shade: var(--ion-color-chatrooma-shade);
+    --ion-color-tint: var(--ion-color-chatrooma-tint);
+  }
+
+
+  .ion-color-chatroomb {
+    --ion-color-base: var(--ion-color-chatroomb);
+    --ion-color-base-rgb: var(--ion-color-chatroomb-rgb);
+    --ion-color-contrast: var(--ion-color-chatroomb-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-chatroomb-contrast-rgb);
+    --ion-color-shade: var(--ion-color-chatroomb-shade);
+    --ion-color-tint: var(--ion-color-chatroomb-tint);
+  }

@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { ChatComponent } from './components/chat/chat.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -15,8 +17,8 @@ import { environment } from './../environments/environment';
 
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  entryComponents: [ChatComponent],
+  declarations: [AppComponent, ChatComponent],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
@@ -24,6 +26,7 @@ import { environment } from './../environments/environment';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig), 
     AngularFireAuthModule,
+    FormsModule
   ],
   providers: [
     StatusBar,
