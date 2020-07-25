@@ -1,4 +1,4 @@
-import { User as firebaseUser  } from 'firebase';
+import { User as firebaseUser } from 'firebase';
 import { User } from '../model/classes/user';
 import { UserService } from './user.service';
 import { Injectable } from '@angular/core';
@@ -14,7 +14,7 @@ export class AuthService {
   firebase
 
   constructor(private afAuth: AngularFireAuth,
-              private userService: UserService) {
+    private userService: UserService) {
     this.afAuth.authState.subscribe((user) => this.currentUser = user);
   }
 
@@ -36,7 +36,7 @@ export class AuthService {
 
 
   async onLogin(email: string, password: string) {
-      return await this.afAuth.signInWithEmailAndPassword(email, password);
+    return await this.afAuth.signInWithEmailAndPassword(email, password);
   }
 
   onLogOut() {
@@ -44,22 +44,13 @@ export class AuthService {
   }
 
   async onRegister(email: string, password: string): Promise<any> {
-    
-    let aux;
-    try 
-    {
-      aux = await this.afAuth.createUserWithEmailAndPassword(email, password);
-      if (aux !== null)
-      {
-        let newUser: User = new User();
-        this.userService.create(this.CurrentUserId, newUser);
-        this.onLogOut();
-      }
-
-    } catch {
-
-    } finally {
-      return aux;
-    }
+    this.afAuth.createUserWithEmailAndPassword(email, password).then(result => {
+      result.user.updateProfile(
+        {
+          displayName: 'Rodolfo Lopez'
+        }
+      );
+      this.onLogOut();
+    }).catch(error => console.log(error));
   }
 }

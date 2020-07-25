@@ -1,28 +1,59 @@
 <ion-header>
-  <ion-toolbar color="tertiary">
-    
+  <ion-toolbar [color]="chatRoom.ppalColor">
     <ion-button slot="start" fill="clear" (click)="closeChat()">
       <ion-icon name="close"></ion-icon>
     </ion-button>
 
-    <ion-title>{{chatRoomName}}</ion-title>
-
+    <ion-title class="ion-no-padding ion-no-margin chat-title">{{chatRoom.description}}</ion-title><ion-icon class="header-icon" slot="end" [src]="chatRoom.icon"></ion-icon>
+  
   </ion-toolbar>
 </ion-header>
 
+<ion-content class="ion-padding chat-a-background" [ngClass]="{'chat-b-background':this.chatRoom.name === 'PPS4B'}">
+  <ion-grid>
 
-<ion-content class="ion-padding">
+    <ion-row *ngFor="let message of messages">
 
-  <ul>
-    <li *ngFor="let message of messages">{{message}}</li>
-  </ul>
+      <ion-col size="8" *ngIf="currentUser !== message.userName" class="message other-message">
+        <b>{{ message?.userName }}</b><br>
+        <span> {{ message?.content }}</span>
+        <div class="time" text-right><br>
+          {{message?.date.toDate() | date: 'short' }}
+        </div>
+      </ion-col>
+
+      <ion-col offset="4" size="8" *ngIf="currentUser === message.userName" class="message my-message">
+        <b *ngIf="currentUser !== message.userName">{{ message?.userName }}</b><br>
+        <span> {{ message?.content }}</span>
+        <div class="time" text-right><br>{{message?.date.toDate() | date: 'short' }}</div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
 
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-row style="padding-top: 0.5em;">
 
-<ion-footer class="ion-padding">
-  <ion-item>
-    <ion-textarea [(ngModel)]="this.currentMessage"></ion-textarea>
-    <ion-button (click)="sendMessage()"><ion-icon name="send" color="success"></ion-icon></ion-button>
-  </ion-item>
+      <ion-col size="10">
+        <textarea autosize maxRows="3" appLimitChar="21" [(ngModel)]="currentMessage" class="message-input"></textarea>
+      </ion-col>
+
+      <ion-col size="2" class="ion-no-padding">
+        <ion-fab>
+          <ion-fab-button [disabled]="currentMessage === ''">
+            <ion-icon name="send" (click)="sendMessage()"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </ion-col>
+
+    </ion-row>
+
+    <div style="padding: 0.2em; margin-left: 0.5em; margin-bottom: 0.4em;">
+      <label>Carácteres restantes: {{21 - currentMessage.length}}</label>
+    </div>
+
+  </ion-toolbar>
 </ion-footer>

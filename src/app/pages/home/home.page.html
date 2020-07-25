@@ -5,10 +5,9 @@
     <ion-row class="filas">
 
       <ion-button color="chatrooma" expand="full" class="botonesPrincipales btnCosasLindas"
-        (click)="openChat()">
+        (click)="openChat(this.chatRoomA)">
         <div>
-          <ion-icon src="assets/svg/classrooma.svg" class="icono" slot="start"></ion-icon><br>
-          <!-- <ion-label color="chatroomb" class="labelBotonCosasLindas">PPS-4A</ion-label> -->
+          <ion-icon src="assets/svg/classrooma.svg" class="icono" slot="start"></ion-icon>
         </div>
       </ion-button>
 
@@ -17,12 +16,11 @@
     <ion-row class="filas">
 
       <ion-button color="chatroomb" expand="full" class="botonesPrincipales btnCosasLindas"
-      (click)="openChat()">
-      <div>
-        <ion-icon src="assets/svg/classroomb.svg" class="icono" slot="start"></ion-icon><br>
-        <!-- <ion-label color="chatroomb" class="labelBotonCosasLindas">PPS-4A</ion-label> -->
-      </div>
-    </ion-button>
+        (click)="openChat(this.chatRoomB)">
+        <div>
+          <ion-icon src="assets/svg/classroomb.svg" class="icono" slot="start"></ion-icon>
+        </div>
+      </ion-button>
 
 
     </ion-row>

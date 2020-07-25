@@ -48,52 +48,7 @@
 
 .icono {
   font-size: 2000%;
-
-
 }
-
-.labelBotonCosasLindas {
-  // color: #fff;
-  font: normal 35px 'inconsolata',serif;
-  //font-family: 'Pacifico';
-  text-shadow: 3px 3px 0 #000;
-  margin: 0.5em 0 0;  
-  margin-bottom: 10em;
-
-}
-
-@keyframes cambia-color{
-  0%{
-      background-position: 0%, 50%;
-  }
-  
-  50%{
-      background-position: 100%, 50%;
-  }
-  
-  100%{
-      background-position: 0%, 100%;
-  }
-}
-
-
-.labelBotonCosasFeas{
-  font: normal 35px 'inconsolata',serif;
-  text-shadow: 3px 3px 0 #000;
-  margin: 0.5em 0 0;
-}
-
-
-@font-face {
-  font-family: 'inconsolata';
-  src: url('../../../assets/fonts/Chunkster Jamz.ttf');//mine
-}
-
-// @font-face {
-//   font-family: 'Billabong';
-//   src: url('../../../assets/fonts/Billabong.ttf');//mine
-// }
-
 
 
 

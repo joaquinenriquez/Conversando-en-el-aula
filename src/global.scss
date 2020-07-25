@@ -45,3 +45,23 @@
     --ion-color-shade: var(--ion-color-chatroomb-shade);
     --ion-color-tint: var(--ion-color-chatroomb-tint);
   }
+
+  .ion-color-othermessage {
+    --ion-color-base: var(--ion-color-othermessage);
+    --ion-color-base-rgb: var(--ion-color-othermessage-rgb);
+    --ion-color-contrast: var(--ion-color-othermessage-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-othermessage-contrast-rgb);
+    --ion-color-shade: var(--ion-color-othermessage-shade);
+    --ion-color-tint: var(--ion-color-othermessage-tint);
+  }
+
+  .ion-color-mymessage {
+    --ion-color-base: var(--ion-color-mymessage);
+    --ion-color-base-rgb: var(--ion-color-mymessage-rgb);
+    --ion-color-contrast: var(--ion-color-mymessage-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-mymessage-contrast-rgb);
+    --ion-color-shade: var(--ion-color-mymessage-shade);
+    --ion-color-tint: var(--ion-color-mymessage-tint);
+  }
+
+

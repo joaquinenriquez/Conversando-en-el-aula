@@ -1,0 +1,38 @@
+#divSuperPuesto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: #416E54;
+}
+ 
+
+#canvas {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../assets/img/splashbg.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#alumnoDivision {
+    font-family: 'tituloApp';
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 2%;
+    left: 10%;
+    animation-name: subir;
+    animation-duration: 10s;
+}
+
+@keyframes subir
+{
+    from {
+        bottom:-10%;
+    }
+}

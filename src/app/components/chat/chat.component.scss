@@ -1,3 +1,61 @@
-ion-content {
-    --background: #cccccc
+.chat-a-background {
+    --background: url('../../../assets/png/chatrooma.png');
 }
+
+.chat-b-background {
+    --background: url('../../../assets/png/chatroomb.png');
+}
+
+
+.chat-title {
+    color: wheat;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.header-icon {
+    font-size: 3em; 
+    margin-right: 0.5em;
+}
+
+
+.message {
+    border-radius: 10px;
+    margin-bottom: 4px; // Separacion entre los mensajes
+    white-space: pre-wrap;
+}
+
+
+.other-message {
+    padding: 10px;
+    background: var(--ion-color-othermessage);
+    color: #fff;
+}
+
+.my-message {
+    background: var(--ion-color-mymessage);
+    color: #fff;
+}
+
+
+.time {
+    color: #dfdfdf;
+    float: right;
+    font-size: small;
+}
+
+.message-input {
+    width: 100%;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 10px;
+    background:#F6EDD9;
+    resize: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    color:black;
+  }
+
+  textarea:focus {
+    outline: none;
+}
+

@@ -1,26 +1,109 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title text-center>Iniciar sesión</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
 
-  <img class="icon" src="assets/icon/favicon.png">
+  <div class="main-Container hero-bkg-animated">
 
-  <ion-item>
-    <ion-label position="floating">Correo electrónico</ion-label>
-    <ion-input type="text" name="email" [(ngModel)]="email"></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type="password" name="password" [(ngModel)]="password"></ion-input>
-  </ion-item>
+    <img class="icon" src="assets/icon/icon.png">
 
-  <br>
 
-  <ion-button expand="block" (click)="onLogin()">Ingresar</ion-button>
-  <ion-button expand="block" (click)="onRegister()">Registrarse</ion-button>
+    <div class="box">
+      
+      <form [formGroup]="this.loginForm" (ngSubmit)="onLogin()">
 
+        <span class="text-center">Iniciar sesión</span>
+
+        <div class="input-container">
+          <input type="mail" formControlName="email" required="" />
+          <label>Nombre de usuario</label>
+        </div>
+
+        <div class="input-container">
+          <input type="password" formControlName="password" required="" />
+          <label>Contraseña</label>
+        </div>
+
+
+        <button type="button" class="btn" (click)="onLogin()">Entrar</button>
+      
+        <ion-grid>
+
+          <ion-row style="margin-top: 20px;">
+
+              <ion-col>
+
+                  <ion-chip style="padding:2px;" (click)="changeTestingUser(1)">
+                      <ion-avatar style="margin:0.1em;">
+                          <img src="../../../assets/img/usuario.svg">
+                      </ion-avatar>
+                      <ion-label style="color:white; padding:2px;">admin</ion-label>
+                  </ion-chip>
+
+              </ion-col>
+
+
+              <ion-col>
+
+                  <ion-chip style="padding:2px;" (click)="changeTestingUser(2)">
+                      <ion-avatar style="margin:0.1em;">
+                          <img src="../../../assets/img/usuario.svg">
+                      </ion-avatar>
+                      <ion-label style="color:white; padding:2px;">invitado</ion-label>
+                  </ion-chip>
+
+              </ion-col>
+
+              <ion-col>
+
+                  <ion-chip style="padding:2px;" (click)="changeTestingUser(3)">
+                      <ion-avatar style="margin:0.1em;">
+                          <img src="../../../assets/img/usuario.svg">
+                      </ion-avatar>
+                      <ion-label style="color:white; padding:2px;">usuario</ion-label>
+                  </ion-chip>
+
+              </ion-col>
+
+
+          </ion-row>
+
+          <ion-row style="margin-top: 2%;">
+              <ion-col>
+
+                  <ion-chip style="padding:2px;" (click)="changeTestingUser(4)">
+                      <ion-avatar style="margin:0.1em;">
+                          <img src="../../../assets/img/usuario.svg">
+                      </ion-avatar>
+                      <ion-label style="color:white; padding:2px;">anonimo</ion-label>
+                  </ion-chip>
+
+              </ion-col>
+
+
+              <ion-col>
+
+                  <ion-chip style="padding:2px;" (click)="changeTestingUser(5)">
+                      <ion-avatar style="margin:0.1em;">
+                          <img src="../../../assets/img/usuario.svg">
+                      </ion-avatar>
+                      <ion-label style="color:white; padding:2px;">tester</ion-label>
+                  </ion-chip>
+
+              </ion-col>
+
+          </ion-row>
+
+
+      </ion-grid>
+    
+    
+    
+      </form>
+
+
+
+    </div>
+
+
+
+  </div>
 </ion-content>

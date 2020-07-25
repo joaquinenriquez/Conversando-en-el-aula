@@ -1,3 +1,4 @@
+import { Message } from 'src/app/model/classes/message';
 import { DataService } from './data.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -10,8 +11,11 @@ export class ChatService {
   constructor(private dataService:DataService) { }
 
   getMessages(chatRoomName: string): Observable<any> {
-    return this.dataService.getOne2('chat_rooms', '5VbymdGuq9VDDoN7lITH');
+    return this.dataService.getAll2(chatRoomName);
   }
 
+  setMessage(chatRoomName: string, message: Message) {
+    return this.dataService.create(chatRoomName, message);
+  }
 
 }

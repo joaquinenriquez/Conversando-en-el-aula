@@ -1,5 +1,7 @@
-export interface Message {
+import { Timestamp } from '@firebase/firestore-types';
+
+export class Message {
+    userName: string;
     content: string;
-    type: string;
-    date: Date;
+    date: Timestamp;
 }
